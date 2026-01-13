@@ -7,32 +7,35 @@
             {
                 //system storge
 
-                string[] bookTitles = new string[100];
-                string[] bookAuthors = new string[100];
-                string[] bookISBNs = new string[100];
-                bool[] bookAvailablity = new bool[100];
-                string[] borrowerNames = new string[100];
-                string[] bookCategories = new string[100];
-                int[] borrowCount = new int[100];
-                DateOnly[] returnDate = new DateOnly[100];
+                string[] titles = new string[100];
+                string[] authors = new string[100];
+                string[] isbns = new string[100];
+                bool[] isAvailabe = new bool[100];
+                string[] borrowers = new string[100];
+                string[] categories = new string[100];
+                int[] count = new int[100];
                 double[] lateFees = new double[100];
                 int lastBookIndex = -1;
 
                 //seed data
-                titles[0] = "Math";
-                authors[0] = "Amjed";
-                isbns[0] = "ISBN001";
-                isAvailable[0] = true;
-                borrowers[0] = "";
-
+            titles[0] = "Math";
+            authors[0] = "Amjed";
+            isbns[0] = "ISBN001";
+            categories[0] = "Scince";
+            isAvailabe[0] = true;
+            borrowers[0] = "";
+            count[0] = 5;
+            lateFees[0] = 0;
                 lastBookIndex++;
 
                 titles[1] = "Physics";
-                authors[1] = "Saif";
-                isbns[1] = "ISBN002";
-                isAvailable[1] = true;
-                borrowers[1] = "";
-
+            authors[1] = "Saif";
+            isbns[1] = "ISBN002";
+            categories[1] = "Scince";
+            isAvailabe[1] = false;
+            borrowers[0] = "Rimas";
+            count[1] =2;
+            lateFees[1] = 0;
                 lastBookIndex++;
 
                 bool exit = false;
@@ -64,9 +67,12 @@
 
                             Console.Write("Enter ISBN: ");
                             isbns[lastBookIndex + 1] = Console.ReadLine();
-
-                            isAvailable[lastBookIndex + 1] = true;
+                        Console.WriteLine("Enter category (Fiction, Science, History, etc.):");
+                        categories[lastBookIndex + 1] = Console.ReadLine();
+                        isAvailabe[lastBookIndex + 1] = true;
                             borrowers[lastBookIndex + 1] = "";
+                        count[lastBookIndex + 1] = 0;
+                           lateFees[lastBookIndex + 1] = 0;
 
                             lastBookIndex++;
 
